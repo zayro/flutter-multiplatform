@@ -30,7 +30,7 @@ dependencies:
   url_launcher: ^5.7.10
   flutter_svg: ^0.19.0
   flutter_intro: ^1.0.0
-  shared_preferences: "<newest version>"
+  shared_preferences:
   path:
   http:
   provider:  
