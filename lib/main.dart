@@ -8,8 +8,9 @@ void main() async {
     theme: ThemeData(
       // Define the default brightness and colors.
       brightness: Brightness.light,
-      primaryColor: Colors.yellow[700],
-      accentColor: Colors.grey[700],
+      //primaryColor: Colors.yellow[100],
+      primaryColor: Color(0xFFfdd835),
+      accentColor: Colors.grey[200],
       backgroundColor: Colors.white,
       cardColor: Colors.white,
       //textSelectionColor: Colors.amber,
@@ -17,7 +18,7 @@ void main() async {
       // Define the default font family.
       //fontFamily: 'Georgia',
     ),
-    initialRoute: "/login",
+    initialRoute: "/splash",
     routes: rootPath(),
     //home: HomePage(),
   ));

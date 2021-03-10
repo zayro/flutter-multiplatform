@@ -1,13 +1,41 @@
 import 'package:flutter/material.dart';
 
+class HomePage extends StatefulWidget {
+  final List<String> list = List.generate(10, (index) => "Text $index");
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: Search(widget.list));
+            },
+            icon: Icon(Icons.search),
+          )
+        ],
+        centerTitle: true,
+        title: Text('Search Bar'),
+      ),
+      body: ListView.builder(
+        itemCount: widget.list.length,
+        itemBuilder: (context, index) => ListTile(
+          title: Text(
+            widget.list[index],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class Search extends SearchDelegate {
-  final List<String> listExample;
-
-  //constructor of class
-  Search(this.listExample);
-
-  List<String> recentList = ["Text 4", "Text 3"];
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return <Widget>[
@@ -25,8 +53,7 @@ class Search extends SearchDelegate {
     return IconButton(
       icon: Icon(Icons.arrow_back),
       onPressed: () {
-        //Navigator.pop(context);
-        Navigator.of(context).pushNamed('/home');
+        Navigator.pop(context);
       },
     );
   }
@@ -41,6 +68,11 @@ class Search extends SearchDelegate {
       ),
     );
   }
+
+  final List<String> listExample;
+  Search(this.listExample);
+
+  List<String> recentList = ["Text 4", "Text 3"];
 
   @override
   Widget buildSuggestions(BuildContext context) {

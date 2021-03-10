@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/drawer.dart';
-import 'widgets/tabs.dart';
+import '../pages/home/components/drawer.dart';
+import 'tabs.dart';
 
 class HomePage extends StatefulWidget {
   @override

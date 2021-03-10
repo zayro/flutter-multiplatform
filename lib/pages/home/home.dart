@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../config/utils/constants.dart';
+
+import '../search/search.dart';
+import './components/drawer.dart';
+import 'components/BottomNavigationBar.dart';
+import 'components/appBar.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -25,7 +32,13 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
+    final List<String> list = List.generate(10, (index) => "Text $index");
+
+    //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBarCustom(context),
       body: ListView(
         children: <Widget>[
           Column(
@@ -35,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage>
                   Container(
                     height: 250.0,
                     width: double.infinity,
-                    color: Colors.yellow[100],
+                    color: Colors.yellow[600],
                   ),
                   Positioned(
                     bottom: 50.0,
@@ -45,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage>
                       width: 400.0,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(200.0),
-                          color: Colors.yellow[200].withOpacity(0.4)),
+                          color: Colors.yellow[600].withOpacity(0.4)),
                     ),
                   ),
                   Positioned(
@@ -56,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage>
                         width: 300.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(150.0),
-                            color: Colors.yellow[300].withOpacity(0.5))),
+                            color: Colors.yellow[400].withOpacity(0.5))),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,12 +113,14 @@ class _MyHomePageState extends State<MyHomePage>
                           borderRadius: BorderRadius.circular(5.0),
                           child: TextField(
                               onTap: () {
-                                Navigator.of(context).pushNamed('/search');
+                                //Navigator.of(context).pushNamed('/search');
+                                showSearch(
+                                    context: context, delegate: Search(list));
                               },
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   prefixIcon: Icon(Icons.search,
-                                      color: Colors.yellow[400], size: 30.0),
+                                      color: Colors.yellow[700], size: 30.0),
                                   contentPadding:
                                       EdgeInsets.only(left: 15.0, top: 15.0),
                                   hintText: 'Search',
@@ -209,19 +224,8 @@ class _MyHomePageState extends State<MyHomePage>
           )
         ],
       ),
-      bottomNavigationBar: Material(
-        color: Colors.white,
-        child: TabBar(
-          controller: controller,
-          indicatorColor: Colors.yellow,
-          tabs: <Widget>[
-            Tab(icon: Icon(Icons.event_seat, color: Colors.yellow)),
-            Tab(icon: Icon(Icons.timer, color: Colors.grey)),
-            Tab(icon: Icon(Icons.shopping_cart, color: Colors.grey)),
-            Tab(icon: Icon(Icons.person_outline, color: Colors.grey))
-          ],
-        ),
-      ),
+      drawer: DrawerCustom(),
+      bottomNavigationBar: BottomNavigationBarCustom(),
     );
   }
 }

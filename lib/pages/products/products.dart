@@ -15,7 +15,7 @@ class _ProductPageState extends State<ProductPage> {
         children: <Widget>[
           Container(
               //height: MediaQuery.of(context).size.height - 185.0,
-              height: MediaQuery.of(context).size.height * 0.2,
+              height: MediaQuery.of(context).size.height * 0.1,
               child: Padding(
                 padding: EdgeInsets.only(left: 40.0),
                 child: Row(
@@ -37,12 +37,13 @@ class _ProductPageState extends State<ProductPage> {
               )),
           Container(
             //height: MediaQuery.of(context).size.height - 185.0,
-            height: MediaQuery.of(context).size.height * 0.8,
+            height: MediaQuery.of(context).size.height * 0.9,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50.0),
-                  topRight: Radius.circular(50.0)),
+                topLeft: Radius.circular(50.0),
+                //topRight: Radius.circular(50.0)
+              ),
             ),
             child: ListView(
               padding: EdgeInsets.only(left: 25.0, right: 20.0),
