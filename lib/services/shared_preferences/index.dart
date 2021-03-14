@@ -1,4 +1,25 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
+class SharedPref {
+  SharedPreferences prefs;
+
+  read(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    return json.decode(prefs.getString(key));
+  }
+
+  save(String key, Map value) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(key, json.encode(value));
+  }
+
+  remove(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove(key);
+  }
+}
 
 addStringToSF() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -59,3 +80,26 @@ removeValues() async {
   //Remove double
   prefs.remove("doubleValue");
 }
+
+
+/**
+ * 
+  loadSharedPrefs() async {
+    try {
+      User user = User.fromJson(await sharedPref.read("user"));
+      Scaffold.of(context).showSnackBar(SnackBar(
+          content: new Text("Loaded!"),
+          duration: const Duration(milliseconds: 500)));
+      setState(() {
+        userLoad = user;
+      });
+    } catch (Excepetion) {
+      Scaffold.of(context).showSnackBar(SnackBar(
+          content: new Text("Nothing found!"),
+          duration: const Duration(milliseconds: 500)));
+    }
+  }
+
+
+// https://betterprogramming.pub/flutter-how-to-save-objects-in-sharedpreferences-b7880d0ee2e4
+ */

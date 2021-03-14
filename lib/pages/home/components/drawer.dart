@@ -18,15 +18,9 @@ class DrawerCustom extends StatelessWidget {
                 child: Text("M"),
               )),
           ListTile(
-            title: Text("Cerrar sesion"),
+            title: Text("Profile"),
             onTap: () {
-              //cerrar_session();
-            },
-          ),
-          ListTile(
-            title: Text("Multimedia"),
-            onTap: () {
-              Navigator.pushNamed(context, '/multimedia');
+              Navigator.pushNamed(context, '/profile');
             },
           ),
           Divider(),

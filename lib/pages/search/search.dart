@@ -1,4 +1,6 @@
+import 'package:app_zayro/services/providers/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Search extends SearchDelegate {
   final List<String> listExample;
@@ -44,7 +46,12 @@ class Search extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    final providers = Provider.of<ProviderSearch>(context);
+
+    providers.search = query;
+
     List<String> suggestionList = [];
+
     query.isEmpty
         ? suggestionList = recentList //In the true case
         : suggestionList.addAll(listExample.where(

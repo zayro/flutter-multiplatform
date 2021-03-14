@@ -90,8 +90,6 @@ class _DetailProductPageState extends State<DetailProductPage> {
                   ),
                   Text(
                     "OFFICE CODE".toUpperCase(),
-                    style: Theme.of(context).textTheme.headline4.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -102,13 +100,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                             TextSpan(text: "Price: \n"),
                             TextSpan(
                               text: "\$10.2030",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline4
-                                  .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                            ),
+                            )
                           ],
                         ),
                       ),

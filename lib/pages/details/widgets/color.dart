@@ -38,10 +38,6 @@ class ColorAndSize extends StatelessWidget {
                     TextSpan(text: "Size \n"),
                     TextSpan(
                       text: "20 cm",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          .copyWith(fontWeight: FontWeight.bold),
                     )
                   ],
                 ),

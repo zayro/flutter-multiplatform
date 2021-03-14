@@ -1,25 +1,49 @@
 import 'package:flutter/material.dart';
+// Handler State
+import 'package:provider/provider.dart';
+
+//Routes
 import 'routes/index.dart';
 
-void main() async {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Main',
-    theme: ThemeData(
-      // Define the default brightness and colors.
-      brightness: Brightness.light,
-      //primaryColor: Colors.yellow[100],
-      primaryColor: Color(0xFFfdd835),
-      accentColor: Colors.grey[200],
-      backgroundColor: Colors.white,
-      cardColor: Colors.white,
-      //textSelectionColor: Colors.amber,
+//Provider State
+import './services/providers/index.dart';
 
-      // Define the default font family.
-      //fontFamily: 'Georgia',
-    ),
-    initialRoute: "/splash",
-    routes: rootPath(),
-    //home: HomePage(),
-  ));
+//Store Data
+/*
+import './services/shared_preferences/index.dart';
+final store = new SharedPref();
+
+final Map info = {"name": "Marlon"};
+
+store.save("author", info);
+*/
+
+void main() async {
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ProviderSearch()),
+        ChangeNotifierProvider(create: (_) => ProviderHome()),
+        /*  ChangeNotifierProvider.value(
+          value: ProviderClient(),
+        ), */
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter App',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          brightness: Brightness.light,
+          primaryColor: Colors.yellow[500],
+          accentColor: Colors.grey[900],
+          buttonColor: Colors.deepOrange,
+          // This makes the visual density adapt to the platform that you run
+          // the app on. For desktop platforms, the controls will be smaller and
+          // closer together (more dense) than on mobile platforms.
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        //home: MyHomePage(title: 'Flutter Demo Home Page'),
+        initialRoute: "/login",
+        routes: rootPath(),
+      )));
 }
