@@ -6,7 +6,7 @@ import 'components/drawer.dart';
 import 'components/BottomNavigationBar.dart';
 import 'components/appBar.dart';
 
-//
+// constant
 import '../../config/utils/constants.dart';
 
 // Provider
