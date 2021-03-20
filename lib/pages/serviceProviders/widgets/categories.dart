@@ -46,7 +46,7 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: SizedBox(
-        width: 80,
+        width: 50,
         child: Column(
           children: [
             Container(

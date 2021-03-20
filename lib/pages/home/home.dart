@@ -6,9 +6,6 @@ import 'components/drawer.dart';
 import 'components/BottomNavigationBar.dart';
 import 'components/appBar.dart';
 
-// constant
-import '../../config/utils/constants.dart';
-
 // Provider
 import 'package:app_zayro/services/providers/index.dart';
 

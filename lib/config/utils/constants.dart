@@ -5,9 +5,21 @@ import 'size.dart';
 //  Colors
 // ******************
 
-// Asignment Color 0xFFF to Hexadecimal
+// Asignment Color 0xFFF to Hexadecimal: 0xFF
+
+// ******************
+//  Colors: Home
+// ******************
+
+Color bottomNavigationBarselectedItemColor = Colors.yellow[600];
+Color bottomNavigationBarBoxShadow = Colors.grey[200];
+Color iconSearchColor = Colors.yellow[600];
 
 //const kPrimaryColor = Color(0xFFFF7643);
+
+Color kPrimaryColors = Colors.yellow;
+Color kPrimaryColorsAccent = Colors.grey[600];
+
 const kPrimaryColor = Color(0xFFfdd835);
 
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -29,8 +41,7 @@ const defaultDuration = Duration(milliseconds: 250);
 // ******************
 //  Forms
 // ******************
-final RegExp emailValidatorRegExp =
-    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+final RegExp emailValidatorRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 const String kEmailNullError = "Please Enter your email";
 const String kInvalidEmailError = "Please Enter Valid Email";
 const String kPassNullError = "Please Enter your password";
@@ -42,8 +53,7 @@ const String kAddressNullError = "Please Enter your address";
 
 /// Decoradres
 final otpInputDecoration = InputDecoration(
-  contentPadding:
-      EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
+  contentPadding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
   border: outlineInputBorder(),
   focusedBorder: outlineInputBorder(),
   enabledBorder: outlineInputBorder(),

@@ -3,15 +3,14 @@ import 'package:flutter/foundation.dart';
 class ProviderSearch with ChangeNotifier, DiagnosticableTreeMixin {
   //Future<List<dynamic>> dataSearch = Http().getHttp('/clientes');
 
-  String _search =
-      ""; //Dentro de nuestro provider, creamos e inicializamos nuestra variable.
+  String _search = ""; //Dentro de nuestro provider, creamos e inicializamos nuestra variable.
 
-  String get search =>
-      _search; //Creamos el metodo Get, para poder obtener el valor de mitexto
+  String get search => _search; //Creamos el metodo Get, para poder obtener el valor de mitexto
 
   //Ahora creamos el metodo set para poder actualizar el valor de _mitexto, este metodo recibe un valor newTexto de tipo String
   set search(String newTexto) {
     _search = newTexto; //actualizamos el valor
+    print(_search);
     notifyListeners(); //notificamos a los widgets que esten escuchando el stream.
   }
 

@@ -4,12 +4,7 @@ import '../../../config/utils/constants.dart';
 
 AppBar AppBarCustom(BuildContext context) {
   return AppBar(
-    //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-    //backgroundColor: kPrimaryColor
-    backgroundColor: Theme.of(context).primaryColor,
-    //backgroundColor: Colors.transparent,
     toolbarOpacity: 0.5,
-    elevation: 0.1,
 /*         leading: IconButton(
       icon: Icon(Icons.menu),
       color: Theme.of(context).accentColor,

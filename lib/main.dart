@@ -8,6 +8,9 @@ import 'routes/index.dart';
 //Provider State
 import './services/providers/index.dart';
 
+//Constant
+import './config/utils/constants.dart';
+
 //Store Data
 /*
 import './services/shared_preferences/index.dart';
@@ -34,14 +37,22 @@ void main() async {
           // This is the theme of your application.
           //
           brightness: Brightness.light,
-          primaryColor: Colors.yellow[500],
-          accentColor: Colors.grey[900],
+          primaryColor: kPrimaryColors,
+          accentColor: kPrimaryColorsAccent,
           buttonColor: Colors.deepOrange,
+          appBarTheme: AppBarTheme(
+            backgroundColor: kPrimaryColors,
+            elevation: 0.1,
+          ),
           // This makes the visual density adapt to the platform that you run
           // the app on. For desktop platforms, the controls will be smaller and
           // closer together (more dense) than on mobile platforms.
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+/*         darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ), */
         //home: MyHomePage(title: 'Flutter Demo Home Page'),
         initialRoute: "/login",
         routes: rootPath(),

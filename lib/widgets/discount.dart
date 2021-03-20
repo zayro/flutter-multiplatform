@@ -6,25 +6,28 @@ class CarouselPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    return SizedBox(
-      height: size.height * 0.2,
-      //width: 300.0,
-      child: Carousel(
-        boxFit: BoxFit.cover,
-        autoplay: true,
-        animationCurve: Curves.fastOutSlowIn,
-        animationDuration: Duration(milliseconds: 1000),
-        dotSize: 6.0,
-        dotIncreasedColor: Colors.grey,
-        dotBgColor: Colors.transparent,
-        dotPosition: DotPosition.topRight,
-        dotVerticalPadding: 10.0,
-        showIndicator: true,
-        indicatorBgPadding: 7.0,
-        images: [
-          NetworkImage('https://picsum.photos/id/1/300/200'),
-          NetworkImage('https://picsum.photos/id/2/300/200'),
-        ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15.0),
+      child: SizedBox(
+        height: 150,
+        //width: 300.0,
+        child: Carousel(
+          boxFit: BoxFit.cover,
+          autoplay: true,
+          animationCurve: Curves.fastOutSlowIn,
+          animationDuration: Duration(milliseconds: 1000),
+          dotSize: 6.0,
+          dotIncreasedColor: Colors.grey,
+          dotBgColor: Colors.transparent,
+          dotPosition: DotPosition.topRight,
+          dotVerticalPadding: 10.0,
+          showIndicator: true,
+          indicatorBgPadding: 7.0,
+          images: [
+            NetworkImage('https://picsum.photos/id/1/300/200'),
+            NetworkImage('https://picsum.photos/id/2/300/200'),
+          ],
+        ),
       ),
     );
   }
